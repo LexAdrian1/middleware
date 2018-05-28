@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import {LogMiddleware} from './log.middleware';
 import {ParametrosController} from "./parametros.controller";
+import {CacheMiddleware} from "./cache.middleware";
 
 @Module({
   imports: [],
@@ -20,7 +21,7 @@ export class AppModule implements NestModule {
             .forRoutes(
                 AppController,
             )
-        //.apply(OtroMiddleware)
-        //.forRoutes(Otras rutas);
+        .apply(CacheMiddleware)
+        .forRoutes(ParametrosController);
     }
 }

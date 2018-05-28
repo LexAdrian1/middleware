@@ -1,6 +1,5 @@
 import {Controller, Get,Param, Post, Query, Req, Res} from "@nestjs/common";
 
-
 @Controller('Parametros')
 
 export class ParametrosController {
@@ -23,7 +22,7 @@ export class ParametrosController {
         const existeCookie = request.cookies[nombreCookie];
         if (existeCookie) {
             return response.send({
-                valor: existeCookie + "Se encuentra en Cache"
+                valor: "Se encuentra en Cache"
             })
         } else {
             return response.status(404).send(
