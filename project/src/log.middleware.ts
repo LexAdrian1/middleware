@@ -17,7 +17,7 @@ export class LogMiddleware implements NestMiddleware {
                 protocol: request.protocol,
                 headers: request.headers,
             };
-
+            //Transformar a String
             const json = JSON.stringify(respuesta);
             switch(nivelDeLog){
                 case 'archivo':
