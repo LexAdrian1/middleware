@@ -8,9 +8,15 @@ export class CacheMiddleware implements NestMiddleware{
                 hostname: request.hostname,
                 path: request.path,
             };
-            console.log('CACHE', ruta);
-            console.log(respuesta);
-            next();
-        };
 
+            if(ruta!=null){
+                console.log('CACHE', ruta);
+                console.log(respuesta);
+            }
+            else{
+                console.log('CACHE', ruta);
+            }
+            next();
+        }
+        };
 }
